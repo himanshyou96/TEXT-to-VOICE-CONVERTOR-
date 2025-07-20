@@ -1,3 +1,5 @@
+
+
 *{
     margin: 0;
     padding: 0;
@@ -5,107 +7,218 @@
     box-sizing: border-box;
 }
 
-.container{
-    width: 100%;
+.hero{
+    color: #fff;
+    width: auto;
     min-height: 100vh;
-    background: linear-gradient(135deg, #153677, #4e085f);
-    padding: 10px;
-}
-
-.todo-app{
-    width: 100%;
-    max-width: 540px;
-    background: #fff;
-    margin: 100px auto 20px;
-    padding: 40px 30px 70px;
-    border-radius: 10px;
-}
-
-.todo-app h2{
-    color: #002675;
+    background: linear-gradient(45deg, #010758, #490d61);
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px; 
 }
 
-.todo-app h2 img{
-    width: 30px;
-    margin-left: 10px;
+.hero h1{
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: -50px;
+    margin-bottom: 50px;
+    text-align: center; 
+}
+.hero h1 span{
+    color: #ff2963;
+    
+}
+textarea{
+    width: 600px;
+    height: 250px;
+    background: #403d84;
+    color: #fff;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    padding: 20px;
+    border-radius: 10px;
+    resize: none;
+    margin-bottom: 30px;
+    max-width: 100%;
+}
+textarea::placeholder{
+    font-size: 16px;
+    color: #ddd;
 }
 
 .row{
+    width: 600px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background: #edeef0;
-    border-radius: 30px;
-    padding-left: 20px;
-    margin-bottom: 25px;
+    gap: 20px;
+    max-width: 100%; 
+    flex-direction: row; 
+}
+/* From Uiverse.io by elijahgummer */ 
+.button-with-icon {
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid  #ff2963;
+  font-family: "Istok Web", sans-serif;
+  letter-spacing: 1px;
+  padding: 0 12px;
+  text-align: center;
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: normal;
+  border-radius: 3px;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+  transform: translateY(0px);
+  position: relative;
+  box-shadow:
+    inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 1px 20px rgba(0, 0, 0, 0),
+    0 3px 0  #ff2963,
+    0 3px 2px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+  background: #ff2963;
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  transition: 150ms all ease-in-out;
 }
 
-input{
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 10px;
-
+.button-with-icon .icon {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  transition: all 0.5s ease-in-out;
 }
+
+.button-with-icon:active {
+  transform: translateY(3px);
+  box-shadow:
+    inset 0 16px 2px -15px rgba(0, 0, 0, 0),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    inset 0 1px 20px rgba(0, 0, 0, 0.1),
+    0 0 0 #0f988e,
+    0 0 0 2px rgba(255, 255, 255, 0.5),
+    0 0 0 rgba(0, 0, 0, 0),
+    0 0 0 rgba(0, 0, 0, 0);
+}
+
+.button-with-icon:hover .text {
+  transform: translateX(80px);
+}
+.button-with-icon:hover .icon {
+  transform: translate(23px);
+}
+
+.text {
+  transition: all 0.5s ease-in-out;
+}
+
+
+/*
 button{
-    border: none;
-    outline: none;
-    padding: 16px 50px;
-    background: #ff5945;
+    background: #ff2963;
     color: #fff;
     font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 35px;
+    border: 0;
+    outline: 0;
     cursor: pointer;
-    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
-ul li {
-    list-style: none;
-    font-size: 17px;
-    padding: 12px 8px 12px 50px;
-    user-select: none;
-    cursor: pointer;
-    position: relative;
+button img{
+    width: 16px;
+    margin-right: 10px;
 }
-
-ul li::before{
-    content: '';
-    position: absolute;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    background-image: url(images/unchecked.png);
-    background-size: cover;
-    background-position: center;
-    top: 12px;
-    left: 8px;
-}
-
-ul li.checked{
-    color: #555;
-    text-decoration: line-through;
+    */
+select{
+    flex: 1;
+    color: #fff;
+    background: #403d84;
+    height: 50px;
+    padding: 0 20px;
+    outline: 0;
+    border: 0;
+    border-radius: 35px;
+    appearance: none;
+    background-image: url(images/dropdown.png);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x:calc(100% - 20px);
+    background-position-y: 20px;
 }
 
 
-ul li.checked::before{
-    background-image: url(images/checked.png);
-}
-ul li span {
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
+@media screen and (max-width: 1024px) {
+    .hero h1{
+        font-size: 40px;
+        margin-top: -30px;
+        margin-bottom: 40px;
+    }
+    textarea{
+        height: 200px;
+        font-size: 14px;
+    }
+    textarea::placeholder{
+        font-size: 15px;
+    }
+    .row{
+        width: 100%;
+        flex-direction: row;
+    }
+    button{
+        font-size: 15px;
+        padding: 8px 25px;
+    }
+    select{
+        height: 45px;
+        font-size: 15px;
+    }
 }
 
-ul li span:hover{
-    background: #edeef0;
+
+@media screen and (max-width: 767px) {
+    .hero h1{
+        font-size: 32px;
+        margin-top: -20px;
+        margin-bottom: 30px;
+    }
+    textarea{
+        height: 150px;
+        font-size: 13px;
+    }
+    textarea::placeholder{
+        font-size: 14px;
+    }
+    .row{
+        width: 100%;
+        flex-direction: column; 
+    }
+    button{
+        font-size: 14px;
+        padding: 10px 20px;
+        width: 100%; 
+        justify-content: center;
+    }
+    button img{
+        display: none; 
+    }
+    select{
+        width: 100%;
+        height: 40px;
+        font-size: 14px;
+    }
 }
