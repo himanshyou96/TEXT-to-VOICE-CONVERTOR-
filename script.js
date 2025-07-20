@@ -1,38 +1,27 @@
-const inputBox = document.getElementById("input-box");
-const listcontainer = document.getElementById("List container");
-function AddTask(){
-    if (inputBox.value === '') {
-        alert("You must write something");
-        
-    } else {
-        let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
-        listcontainer.appendChild(li);
-        let span = document.createElement("span");
-        span.innerHTML = "\u00d7";
-        li.appendChild(span);
-    }
-    inputBox.value = "" ;
-    saveData();
-}
+let speech = new SpeechSynthesisUtterance();
 
-    listcontainer.addEventListener("click",function (e){
-    if(e.target.tagName === "LI"){
-        e.target.classList.toggle("checked");
-            saveData();
-    }
-    else if (e.target.tagName === "SPAN"){
-        e.target.parentElement.remove();
-            saveData();
-    }
-}, false);
+let voices = [];
 
-function saveData(){
-    localStorage.setItem("data",listcontainer.innerHTML);
-}
+let voiceselect = document.querySelector("select");
 
-function showTask(){
-     listcontainer.innerHTML = localStorage.getItem("data");
-}
+window.speechSynthesis.onvoiceschanged = () => {
+    voices = window.speechSynthesis.getVoices();
+    speech.voice = voices[0];
 
- showTask();
+   voices.forEach((voice, i)=> (voiceselect.options[i] = new Option(voice.name, i)));
+};
+
+voiceselect.addEventListener("change", () =>{
+    speech.voice = voices[voiceselect.value];
+});
+
+
+
+
+
+
+
+document.querySelector("button").addEventListener("click",() =>{ 
+    speech.text = document.querySelector("textarea").value;
+    window.speechSynthesis.speak(speech);
+})
