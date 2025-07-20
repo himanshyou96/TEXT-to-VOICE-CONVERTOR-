@@ -7,7 +7,7 @@ function populateVoices() {
     if (voices.length === 0) return;
 
     speech.voice = voices[0];
-    voiceselect.innerHTML = ''; // clear old options
+    voiceselect.innerHTML = ''; 
 
     voices.forEach((voice, i) => {
         const option = new Option(voice.name + ' (' + voice.lang + ')', i);
@@ -15,10 +15,9 @@ function populateVoices() {
     });
 }
 
-// Try populating on page load
+
 populateVoices();
 
-// Try again when voices are loaded
 window.speechSynthesis.onvoiceschanged = populateVoices;
 
 voiceselect.addEventListener("change", () => {
